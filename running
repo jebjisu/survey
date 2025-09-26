@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>설문조사</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 소개 페이지 -->
+        <div id="introPage" class="intro-page">
+            <header class="intro-header">
+                <div class="icon-container">
+                    <span class="running-icon">🏃‍♀️</span>
+                    <span class="glasses-icon">🥽</span>
+                </div>
+                <h1>러닝을 하며 느낀 여러분의 목소리를 들려주세요!</h1>
+                <div class="sparkle">🏃‍♀️</div>
+            </header>
+
+            <div class="intro-content">
+                <div class="intro-section">
+                    <h2>안녕하세요! 👋</h2>
+                    <p>안녕하세요! 저희는 CX(Customer eXperience) 프로젝트를 진행하고 있는 <strong>LG DX 1팀</strong>입니다.</p>
+                    <p>저희는 러너들이 <strong>더 몰입감 있고 안전하게 달릴 수 있는 스마트 기기</strong>를 기획하고 있어요:)</p>
+                    <p>잠깐만 시간을 내어 러닝 중 불편했던 점과 원하는 기능을 알려주시면 정말 감사하겠습니다.</p>
+                </div>
+
+                <div class="intro-info">
+                    <div class="info-item">
+                        <span class="info-icon">⏱️</span>
+                        <span>👉 설문 소요 시간: 약 3분</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">🔒</span>
+                        <span>익명으로 진행되며, 설문 결과는 통계적 분석에만 사용됩니다</span>
+                    </div>
+                </div>
+
+                <div class="intro-closing">
+                    <p><strong>여러분의 의견이 실제 제품 개발과 서비스 개선에 큰 힘이 됩니다✨</strong></p>
+                </div>
+
+                <div class="start-survey">
+                    <button id="startSurveyBtn" class="start-btn">
+                        <span>설문 시작하기</span>
+                        <span class="arrow">👇</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 설문조사 페이지 -->
+        <div id="surveyPage" class="survey-page" style="display: none;">
+            <header>
+                <h1>CX 프로젝트 러닝 설문조사</h1>
+            </header>
+
+        <form id="surveyForm">
+            <div class="progress-bar">
+                <div class="progress" id="progressBar"></div>
+            </div>
+
+            <div class="question-container">
+                <!-- Part 0: 인구 통계학적 질문 -->
+                <div class="question" id="question1">
+                    <div class="part-header">[Part 0] 인구 통계학적 질문</div>
+                    <h3>질문 1: 성별을 선택해주세요</h3>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q1" value="1">
+                            <span>1. 여자</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q1" value="2">
+                            <span>2. 남자</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question2">
+                    <h3>질문 2: 나이대를 선택해주세요</h3>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q2" value="1">
+                            <span>1. 10대</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q2" value="2">
+                            <span>2. 20대</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q2" value="3">
+                            <span>3. 30대</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q2" value="4">
+                            <span>4. 40대</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q2" value="5">
+                            <span>5. 50대 이상</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Part 1: 러닝 행태 파악 질문 -->
+                <div class="question" id="question3">
+                    <div class="part-header">[Part 1] 러닝 행태 파악 질문</div>
+                    <h3>질문 3: 러닝을 시작한 지 얼마나 되셨나요?</h3>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q3" value="1">
+                            <span>1. 1년 미만</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q3" value="2">
+                            <span>2. 1년 이상 2년 미만</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q3" value="3">
+                            <span>3. 2년 이상 3년 미만</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q3" value="4">
+                            <span>4. 3년 이상 4년 미만</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q3" value="5">
+                            <span>5. 4년 이상</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question4">
+                    <h3>질문 4: 일주일에 러닝을 몇 번이나 즐기시나요?</h3>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q4" value="1">
+                            <span>1. 1일</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q4" value="2">
+                            <span>2. 2일</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q4" value="3">
+                            <span>3. 3일</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q4" value="4">
+                            <span>4. 4일</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q4" value="5">
+                            <span>5. 5일 이상</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question5">
+                    <h3>질문 5: 마라톤 대회에 참여해본 경험이 있나요?</h3>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q5" value="1">
+                            <span>1. 1-2회</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q5" value="2">
+                            <span>2. 3-4회</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q5" value="3">
+                            <span>3. 5-6회</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q5" value="4">
+                            <span>4. 7회 이상</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q5" value="5">
+                            <span>5. 없음</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Part 2: 현재 러닝 경험의 어려움 파악 -->
+                <div class="question" id="question6">
+                    <div class="part-header">[Part 2] 현재 러닝 경험의 어려움 파악</div>
+                    <h3>질문 6: 달리기 중 스마트폰이나 스마트워치를 확인하는 행동이 달리기 몰입에 방해가 된다고 느낀 적이 있습니까?</h3>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q6" value="1">
+                            <span>1. 매우 그렇다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q6" value="2">
+                            <span>2. 그렇다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q6" value="3">
+                            <span>3. 보통이다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q6" value="4">
+                            <span>4. 그렇지 않다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q6" value="5">
+                            <span>5. 전혀 그렇지 않다</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question7">
+                    <h3>질문 7: 러닝을 할 때, 전문적인 자세 교정이나 실시간 페이스 조절의 필요성을 느낍니까?</h3>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q7" value="1">
+                            <span>1. 매우 그렇다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q7" value="2">
+                            <span>2. 그렇다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q7" value="3">
+                            <span>3. 보통이다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q7" value="4">
+                            <span>4. 그렇지 않다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q7" value="5">
+                            <span>5. 전혀 그렇지 않다</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question8">
+                    <h3>질문 8: 현재 사용하는 기기로는 전문적인 자세 교정이나 실시간 페이스 조절에 한계가 있다고 느끼십니까?</h3>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q8" value="1">
+                            <span>1. 매우 그렇다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q8" value="2">
+                            <span>2. 그렇다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q8" value="3">
+                            <span>3. 보통이다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q8" value="4">
+                            <span>4. 그렇지 않다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q8" value="5">
+                            <span>5. 전혀 그렇지 않다</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question9">
+                    <h3>질문 9: 현재 보유/사용 중인 러닝 기기는 무엇인가요? (복수 선택 가능)</h3>
+                    <div class="options">
+                        <label>
+                            <input type="checkbox" name="q9" value="1">
+                            <span>1. 스마트워치</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="q9" value="2">
+                            <span>2. 블루투스 이어폰</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="q9" value="3">
+                            <span>3. 심박수 측정기</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="q9" value="4">
+                            <span>4. 없음</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="q9" value="5">
+                            <span>5. 기타</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question10">
+                    <h3>질문 10: 혼자 달릴 때 지루함을 느끼거나 동기부여가 떨어진다고 느낀 적이 있습니까?</h3>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q10" value="1">
+                            <span>1. 매우 그렇다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q10" value="2">
+                            <span>2. 그렇다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q10" value="3">
+                            <span>3. 보통이다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q10" value="4">
+                            <span>4. 그렇지 않다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q10" value="5">
+                            <span>5. 전혀 그렇지 않다</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Part 3: 기능별 매력도 평가 -->
+                <div class="question" id="question11">
+                    <div class="part-header">[Part 3] 기능별 매력도 평가</div>
+                    <div class="concept-intro">
+                        <h2>🎯 스마트 러닝 글라스 컨셉 소개</h2>
+                        <div class="concept-description">
+                            <p><strong>"시선을 아래로 내리지 않고도 눈앞의 AR(증강현실) 화면을 통해 달리기 정보(속도, 거리, 심박수 등)를 확인하며, 음성 코칭까지 받을 수 있는 '스마트 러닝 글라스'가 있다고 가정해 보겠습니다."</strong></p>
+                        </div>
+                    </div>
+                    <h3>질문 11: AR 페이스 메이커 기능에 대한 매력도는 어떠신가요?</h3>
+                    <div class="feature-description">
+                        <h4>📱 AR 페이스 메이커</h4>
+                        <p>가상의 페이스메이커나 과거의 내 기록을 눈앞에 띄워 함께 달리는 기능</p>
+                    </div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q11" value="1">
+                            <span>1. 전혀 매력적이지 않다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q11" value="2">
+                            <span>2. 매력적이지 않다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q11" value="3">
+                            <span>3. 보통이다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q11" value="4">
+                            <span>4. 매력적이다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q11" value="5">
+                            <span>5. 매우 매력적이다</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question12">
+                    <h3>질문 12: AI 자세 코칭 기능에 대한 매력도는 어떠신가요?</h3>
+                    <div class="feature-description">
+                        <h4>🤖 AI 자세 코칭</h4>
+                        <p>머리 흔들림·자세 분석 후 실시간 음성 피드백, 발 접지면 분석</p>
+                    </div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q12" value="1">
+                            <span>1. 전혀 매력적이지 않다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q12" value="2">
+                            <span>2. 매력적이지 않다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q12" value="3">
+                            <span>3. 보통이다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q12" value="4">
+                            <span>4. 매력적이다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q12" value="5">
+                            <span>5. 매우 매력적이다</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question13">
+                    <h3>질문 13: 스마트 세이프티 존 기능에 대한 매력도는 어떠신가요?</h3>
+                    <div class="feature-description">
+                        <h4>🛡️ 스마트 세이프티 존</h4>
+                        <p>후방 접근 차량 등 위험요소 감지 후 알림 기능</p>
+                    </div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q13" value="1">
+                            <span>1. 전혀 매력적이지 않다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q13" value="2">
+                            <span>2. 매력적이지 않다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q13" value="3">
+                            <span>3. 보통이다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q13" value="4">
+                            <span>4. 매력적이다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q13" value="5">
+                            <span>5. 매우 매력적이다</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question14">
+                    <h3>질문 14: AR 인터랙티브 맵 기능에 대한 매력도는 어떠신가요?</h3>
+                    <div class="feature-description">
+                        <h4>🗺️ AR 인터랙티브 맵</h4>
+                        <p>달리는 경로 위에 목표지점 인터벌 구간 시각적 표시 기능</p>
+                    </div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q14" value="1">
+                            <span>1. 전혀 매력적이지 않다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q14" value="2">
+                            <span>2. 매력적이지 않다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q14" value="3">
+                            <span>3. 보통이다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q14" value="4">
+                            <span>4. 매력적이다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q14" value="5">
+                            <span>5. 매우 매력적이다</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Part 4: 구매 의향 및 가격 수용도 조사 -->
+                <div class="question" id="question15">
+                    <div class="part-header">[Part 4] 구매 의향 및 가격 수용도 조사</div>
+                    <h3>질문 15: 위와 같은 핵심 기능을 갖춘 '스마트 러닝 글라스'가 출시된다면 구매할 의향이 있으십니까?</h3>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q15" value="1">
+                            <span>1. 절대 구매하지 않겠다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q15" value="2">
+                            <span>2. 구매하지 않을 것 같다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q15" value="3">
+                            <span>3. 반반이다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q15" value="4">
+                            <span>4. 구매할 것 같다</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q15" value="5">
+                            <span>5. 반드시 구매하겠다</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question16">
+                    <h3>질문 16: 이 제품을 구매하는 데 가장 큰 장벽(허들)이 될 것으로 생각되는 것은 무엇입니까? (복수 선택)</h3>
+                    <div class="options">
+                        <label>
+                            <input type="checkbox" name="q16" value="1">
+                            <span>1. 가격</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="q16" value="2">
+                            <span>2. 디자인</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="q16" value="3">
+                            <span>3. 배터리 시간</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="q16" value="4">
+                            <span>4. 다른 사람들의 시선</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="q16" value="5">
+                            <span>5. 기능</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question17">
+                    <h3>질문 17: 만약 이 제품이 출시된다면, 어느 정도 가격대일 때 구매를 고려하시겠습니까?</h3>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q17" value="1">
+                            <span>1. 50만원 미만</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q17" value="2">
+                            <span>2. 50만원 이상-60만원 미만</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q17" value="3">
+                            <span>3. 60만원 이상-70만원 미만</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q17" value="4">
+                            <span>4. 70만원 이상-80만원 미만</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q17" value="5">
+                            <span>5. 80만원 이상이더라도 기능이 충분히 좋다면 구매할 의향이 있다</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question18">
+                    <h3>질문 18: 위 기능 중 가장 기대되는 기능을 골라주세요!</h3>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q18" value="1">
+                            <span>1. 기본 기능 (골전도 음악/GPS/헬스 데이터)</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q18" value="2">
+                            <span>2. AR페이스 메이커 ‘버디’</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q18" value="3">
+                            <span>3. 실시간 AI 자세 코칭</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q18" value="4">
+                            <span>4. AR 알리미 (위험요소, 인터벌)</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q18" value="5">
+                            <span>5. 친구와 함께 하는 경쟁 게임 ‘따로 또 같이’</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question19">
+                    <h3>질문 19: 개선 사항이나 추가 기능이 있다면 자유롭게 적어주세요.</h3>
+                    <div class="options">
+                        <label style="width:100%">
+                            <textarea name="q19" rows="5" style="width:100%; padding:12px; border: 2px solid #e0e0e0; border-radius: 12px; resize: vertical;" placeholder="자유롭게 의견을 남겨주세요"></textarea>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navigation">
+                <button type="button" id="prevBtn" onclick="changeQuestion(-1)">이전</button>
+                <button type="button" id="nextBtn" onclick="changeQuestion(1)">다음</button>
+                <button type="submit" id="submitBtn" style="display: none;">설문 제출</button>
+            </div>
+        </form>
+
+            <div id="result" class="result" style="display: none;">
+                <h2>설문조사 완료!</h2>
+                <div id="answers"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
